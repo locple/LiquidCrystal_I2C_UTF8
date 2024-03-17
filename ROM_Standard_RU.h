@@ -1,6 +1,15 @@
-// Character mappings for LCDs using following controller/driver chips:
-// Hitachi HD44780UA02
-// Written by Le Phuoc Loc @ Vietnam College of Industry And Comerce
+/*
+  Russian standard ROM header file
+
+  Character mappings for LCDs using following controller/driver chips:
+  - Hitachi HD44780UA02
+
+  Created 17 Mar 2024
+  Author: Le Phuoc Loc
+
+  https://github.com/locple/LiquidCrystal_I2C_UTF8
+*/
+
 #ifndef LCDI2C_ROM
 #define LCDI2C_ROM
 

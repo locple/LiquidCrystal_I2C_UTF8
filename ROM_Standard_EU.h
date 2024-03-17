@@ -1,6 +1,16 @@
-// Character mappings for LCDs using following controller/driver chips:
-// Wuxi AIP31066W2, Sitronix ST7066-0B
-// Written by Le Phuoc Loc @ Vietnam College of Industry And Comerce
+/*
+  Latin standard ROM header file
+
+  Character mappings for LCDs using following controller/driver chips:
+  - Wuxi AIP31066W2
+  - Sitronix ST7066-0B
+
+  Created 17 Mar 2024
+  Author: Le Phuoc Loc
+
+  https://github.com/locple/LiquidCrystal_I2C_UTF8
+*/
+
 #ifndef LCDI2C_ROM
 #define LCDI2C_ROM
 
@@ -28,13 +38,13 @@ extern const struct Symbol Symbols [SymbolNum] = {
   {0x03A3, 0xDA},   // Σ sigma (capital)
   {0x03A9, 0xDE},   // Ω omega (capital)
   {0x03B1, 0xDF},   // α alpha
-  {0x03B2, 0xE0},	  // β beta
-  {0x03B3, 0xE1},	  // γ gamma
-  {0x03B4, 0xE2},	  // δ delta
-  {0x03B5, 0xE3},	  // ε epsilon
-  {0x03B7, 0xE5},	  // η eta
+  {0x03B2, 0xE0},   // β beta
+  {0x03B3, 0xE1},   // γ gamma
+  {0x03B4, 0xE2},   // δ delta
+  {0x03B5, 0xE3},   // ε epsilon
+  {0x03B7, 0xE5},   // η eta
   {0x03B8, 0xE6},   // θ theta
-  {0x03BC, 0xEA},	  // μ mu
+  {0x03BC, 0xEA},   // μ mu
   {0x03C0, 0xED},   // π pi
   {0x03C1, 0xEE},   // ρ rho
   {0x03C3, 0xEF},   // σ sigma

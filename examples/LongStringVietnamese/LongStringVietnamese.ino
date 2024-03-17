@@ -1,15 +1,41 @@
-// This code is not for Arduino Uno due to memory sortage for the long string here
+/*
+  LongStringVietnamese: print a long Vietnamese text to
+  a popular LCD1602A (Japanese ROM) using I2C (PCF8574)
+  Author: Le Phuoc Loc
+
+  Circuit:
+  - LOLIN D1 Mini:          5 (SCL),    4 (SDA)
+  - ESP8266:                D1 (SCL),   D2 (SDA)
+  - LOLIN D32:              22 (SCL),   21 (SDA)
+  - ESP32:                  D22 (SCL),  D21 (SDA)
+  Not applicable for Arduino series due to memory limit
+
+  Coding: steps to follow
+  - Include LCDI2C_Viet.h for the main class and customized characters for Vietnamese
+    => All Vietnamese letters and degree (°) symbol can be printed.
+  - Include ROM_Standard_JP.h for Greek symbol mappings on LCD2004A Japanese ROM
+    => All English letters, sign(÷√∞→←), Greek(ΣΩαβδεθμπρ), currency(¥) symbols can be printed.
+  - Create LiquidCrystal_I2C_UTF8 object with I2C address=0x27, LCD size: 16 columns, 2 rows
+  - ::init(): Initialize the LCD
+  - ::backlight(): Turn on the LCD backlight
+  - ::print(text): print text (String or char[]) to LCD
+    If no longer room to print the next word in current line, it'll be printed in next line.
+    ::print(text, nsec): print long text with pause 'nsec' seconds
+    If the screen is full, wait 'nsec' seconds for audience to read before printing the next part on next screen.
+	Note: max 8 Vietnamese letters with diacritics printed on a screen, otherwise diacritics removed.
+
+  https://github.com/locple/LiquidCrystal_I2C_UTF8
+*/
 
 #include <LCDI2C_Viet.h>
 #include <ROM_Standard_JP.h>
 
-LiquidCrystal_I2C_Viet lcd(0x27, 16, 2);   // LCD1602A
+LiquidCrystal_I2C_Viet lcd(0x27, 16, 2);  // I2C address: 0x27; Display size: 16x2
 
 void setup() {
   lcd.init();
-	lcd.backlight();
+  lcd.backlight();
 
-  // Print long string, not suitable for boards with small memory capacity like Arduino Uno
   lcd.println("TIẾNG VIỆT TA... HAY THẬT....!");
   delay(5000); lcd.clear();
 
@@ -45,9 +71,12 @@ SỖ sàng, SỔ toẹt chẳng tha. GIẢ thật, GIÃ gạo cho qua tháng ng�
 Cánh HẨU chầu HẪU ngồi chờ đổi ngôi. Mưa rỉ RẢ mệt RÃ người. RÃO gân cốt, RẢO bước thời đi nhanh. \
 Cây SẢ, suồng SÃ là anh. TẢ thực, TÃ lót để dành trẻ con. Chàng HẢNG ai mở HÃNG buôn. KỶ luật KỸ xảo mình luôn ghi lòng. \
 HỦ tục, HŨ gạo ngày đông. Hỏi NGÃ khó, chớ NGÃ lòng NGẢ nghiêng....!";
+  // Print long text with pause (in seconds): if no room left on screen to print,
+  // delay a given time (= 4s) before clearing screen and printing the next part.
+  // Not suitable for boards with small memory capacity like Arduino series
   lcd.println(poem, 4);
-  delay(5000); lcd.clear();
 
+  delay(5000); lcd.clear();
   lcd.print("(Đinh Trực sưu tầm)");
 }
 

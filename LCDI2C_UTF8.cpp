@@ -1,3 +1,14 @@
+/*
+  LiquidCrystal_I2C_UTF8 class impplementation file
+
+  Base class implementation for printing UTF8 strings to I2C LCD
+
+  Created 17 Mar 2024
+  Author: Le Phuoc Loc
+
+  https://github.com/locple/LiquidCrystal_I2C_UTF8
+*/
+
 #include <Arduino.h>
 #define LCDI2C_Customization  // to ignore LetterNum and Letters definitions in LCDI2C_UTF8.h
 #include "LCDI2C_UTF8.h"

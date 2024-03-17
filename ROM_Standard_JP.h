@@ -1,6 +1,19 @@
-// Character mappings for LCDs using following controller/driver chips (the most popular LCDs in the market):
-// Hitachi HD44780UA00, Wuxi AIP31066, Samsung KS0066F00, Samsung KS0066F04, Jewel Hill SPLC780D, Sitronix ST7066-0A
-// Written by Le Phuoc Loc @ Vietnam College of Industry And Comerce
+/*
+  Japanese standard ROM header file
+
+  Character mappings for LCDs using following controller/driver chips (the most popular LCDs in the market):
+  - Hitachi HD44780UA00
+  - Wuxi AIP31066
+  - Samsung KS0066F00, KS0066F04
+  - Jewel Hill SPLC780D
+  - Sitronix ST7066-0A
+
+  Created 17 Mar 2024
+  Author: Le Phuoc Loc
+
+  https://github.com/locple/LiquidCrystal_I2C_UTF8
+*/
+
 #ifndef LCDI2C_ROM
 #define LCDI2C_ROM
 
@@ -10,11 +23,11 @@ extern const struct Symbol Symbols [SymbolNum] = {
   {0x00A5, 0x5C},   // ¥ Yen
   {0x2192, 0x7E},   // → right arrow
   {0x2190, 0x7F},   // ← left arrow
-  {0x03B1, 0xE0},	  // α alpha
-  {0x03B2, 0xE2},	  // β beta
-  {0x03B5, 0xE3},	  // ε epsilon
-  {0x03BC, 0xE4},	  // μ mu
-  {0x03B4, 0xE5},	  // δ delta
+  {0x03B1, 0xE0},   // α alpha
+  {0x03B2, 0xE2},   // β beta
+  {0x03B5, 0xE3},   // ε epsilon
+  {0x03BC, 0xE4},   // μ mu
+  {0x03B4, 0xE5},   // δ delta
   {0x03C1, 0xE6},   // ρ rho
   {0x221A, 0xE8},   // √ sqrt
   {0x03B8, 0xF2},   // θ theta

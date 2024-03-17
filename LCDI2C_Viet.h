@@ -1,7 +1,17 @@
-// Add customizied characters for Vietnamese languange (max 8 customized characters printed at once)
-// Remember to include appropriate ROM header file with your LCD controller/driver
-// Written by Le Phuoc Loc @ Vietnam College of Industry And Comerce
-// Vietnamese tones & diacritics for 5x8 Latin letters designed by Le Phuoc Loc
+/*
+  LiquidCrystal_I2C_Viet class header file
+
+  Add customizied characters for Vietnamese languange (max 8 customized characters printed at once)
+  Remember to include appropriate ROM header file with your LCD controller/driver
+
+  Created 17 Mar 2024
+  Author: Le Phuoc Loc
+  Vietnamese tones & diacritics design for 5x8 Latin letters
+  Author: Le Phuoc Loc
+
+  https://github.com/locple/LiquidCrystal_I2C_UTF8
+*/
+
 #ifndef LCDI2C_Customization
 #define LCDI2C_Customization
 #include "LCDI2C_UTF8.h"

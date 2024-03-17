@@ -1,6 +1,15 @@
-// Base class for printing UTF8 strings to I2C LCD
-// Remember to include appropriate ROM header file with your LCD controller/driver
-// Written by Le Phuoc Loc @ Vietnam College of Industry And Comerce
+/*
+  LiquidCrystal_I2C_UTF8 class header file
+
+  Base class for printing UTF8 strings to I2C LCD
+  Remember to include appropriate ROM header file with your LCD controller/driver
+
+  Created 17 Mar 2024
+  By Le Phuoc Loc
+
+  https://github.com/locple/LiquidCrystal_I2C_UTF8
+*/
+
 #ifndef LCDI2C_UTF8
 #define LCDI2C_UTF8
 #include <LiquidCrystal_I2C.h>
