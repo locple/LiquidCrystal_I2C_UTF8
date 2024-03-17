@@ -1,0 +1,42 @@
+################################################
+# Syntax Coloring Map For LiquidCrystal_I2C_UTF8
+################################################
+
+################################################
+# Datatypes (KEYWORD1)
+################################################
+LiquidCrystal_I2C_UTF8	KEYWORD1
+LiquidCrystal_I2C_Viet	KEYWORD1
+
+################################################
+# Methods and Functions (KEYWORD2)
+################################################
+init				KEYWORD2
+begin				KEYWORD2
+clear				KEYWORD2
+home				KEYWORD2
+setCursor			KEYWORD2
+getCursorColumn		KEYWORD2
+getCursorRow		KEYWORD2
+noBacklight			KEYWORD2
+backlight			KEYWORD2
+createChar			KEYWORD2
+print				KEYWORD2
+println				KEYWORD2
+blink_on			KEYWORD2
+blink_off			KEYWORD2
+setBacklight		KEYWORD2
+write				KEYWORD2
+
+################################################
+# Instances (KEYWORD2)
+################################################
+lcd					KEYWORD2
+
+################################################
+# Constants (LITERAL1)
+################################################
+LetterNum			LITERAL1
+Letters				LITERAL1
+SymbolNum			LITERAL1
+Symbols				LITERAL1
