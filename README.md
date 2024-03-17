@@ -34,9 +34,11 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 
 **Printing English**:
 - Include LCDI2C_UTF8.h for the main base class and one customized character (°)
+
   => Degree(°) symbol can be printed.
 - Include ROM_Standard_JP.h for Greek symbol mappings on ROM chips:
   HD44780UA00, AIP31066, KS0066F00, KS0066F04, SPLC780D, ST7066-0A
+
   => All English letters, sign(÷√∞→←), Greek(ΣΩαβδεθμπρ), currency(¥) symbols can be printed.
 - Create LiquidCrystal_I2C_UTF8 object with I2C address, LCD columns, LCD rows
 - ::init(): Initialize the LCD
@@ -48,9 +50,11 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 
 **Printing Vietnamese**:
 - Include LCDI2C_Viet.h for the main class and customized characters for Vietnamese
-    => All Vietnamese letters and degree (°) symbol can be printed.
+
+  => All Vietnamese letters and degree (°) symbol can be printed.
 - Include ROM_Standard_JP.h for Greek symbol mappings on ROM chips:
   HD44780UA00, AIP31066, KS0066F00, KS0066F04, SPLC780D, ST7066-0A
+
   => All English letters, sign(÷√∞→←), Greek(ΣΩαβδεθμπρ), currency(¥) symbols can be printed.
 - Create LiquidCrystal_I2C_UTF8 object with I2C address, LCD columns, LCD rows
 - ::init(): Initialize the LCD
@@ -63,8 +67,10 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 
 **Printing Russian**:
 - Include LCDI2C_UTF8.h for the main base class and one customized character (°)
+
   => Degree(°) symbol can be printed.
 - Include ROM_Surenoo_RU.h for Russian letter mappings on Surenoo SLC1602 (Russian version)
+
   => All Russian and English letters, arrow (↵↑→↓←), currency (¢£), (×) symbols can be printed.
 - Create LiquidCrystal_I2C_UTF8 object with I2C address, LCD columns, LCD rows
 - ::init(): Initialize the LCD
