@@ -22,7 +22,7 @@
     If no longer room to print the next word in current line, it'll be printed in next line.
     ::print(text, nsec): print long text with pause 'nsec' seconds
     If the screen is full, wait 'nsec' seconds for audience to read before printing the next part on next screen.
-	Note: max 8 Vietnamese letters with diacritics printed on a screen, otherwise diacritics removed.
+    Note: max 8 Vietnamese letters with diacritics printed on a screen, otherwise diacritics removed.
 
   https://github.com/locple/LiquidCrystal_I2C_UTF8
 */
