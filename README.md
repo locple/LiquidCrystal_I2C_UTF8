@@ -1,5 +1,5 @@
 # LiquidCrystal_I2C_UTF8
-An Arduino library extended from LiquidCrystal_I2C to print UTF-8 strings (Vietnamese, Russian) on LCDs (16x2, 20x4, ...)
+An Arduino library extended from LiquidCrystal_I2C to print Vietnamese/Russian (UTF-8) on LCDs (16x2, 20x4...)
 
 ## Hardware Required
 - LCD (1602, 2004, ...) using controllers/drivers:
@@ -41,7 +41,7 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 
   HD44780UA00, AIP31066, KS0066F00, KS0066F04, SPLC780D, ST7066-0A
 
-  => All English letters, sign(÷ √ ∞ → ←), Greek(Σ Ω α β δ ε θ μ π ρ), currency(¥) symbols can be printed.
+  => All English letters, sign (÷ √ ∞ → ←), Greek (Σ Ω α β δ ε θ μ π ρ), currency(¥) symbols can be printed.
 - Create LiquidCrystal_I2C_UTF8 object with I2C address, LCD columns, LCD rows
 - ::init(): Initialize the LCD
 - ::backlight(): Turn on the LCD backlight
@@ -60,7 +60,7 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 
   HD44780UA00, AIP31066, KS0066F00, KS0066F04, SPLC780D, ST7066-0A
 
-  => All English letters, sign(÷ √ ∞ → ←), Greek(Σ Ω α β δ ε θ μ π ρ), currency(¥) symbols can be printed.
+  => All English letters, sign (÷ √ ∞ → ←), Greek (Σ Ω α β δ ε θ μ π ρ), currency(¥) symbols can be printed.
 - Create LiquidCrystal_I2C_UTF8 object with I2C address, LCD columns, LCD rows
 - ::init(): Initialize the LCD
 - ::backlight(): Turn on the LCD backlight
