@@ -26,8 +26,9 @@ An Arduino library extended from LiquidCrystal_I2C to print UTF-8 strings (Vietn
 - LCD4004 = 40 columns x 04 rows
 
 **Determine I2C Address**:
-- No shortcut on A0, A1, A2 of TI's PCF8574 => 0x27
-- No shortcut on A0, A1, A2 of NXP's PCF8574 => 0x3F
+- No shortcut on A0, A1, A2 of TI's PCF8574     => 0x27
+- No shortcut on A0, A1, A2 of NXP's PCF8574    => 0x3F
+
 Otherwise, use I2C scanning program to detect I2C address:
 https://learn.adafruit.com/scanning-i2c-addresses/arduino
 
