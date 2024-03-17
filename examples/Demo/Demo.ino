@@ -1,7 +1,7 @@
 /*
   Demo: print sample temperature and humidity value to
   a popular LCD1602A (Japanese ROM) using I2C (PCF8574)
-  Author: Le Phuoc Loc
+  Author: Le Phuoc Loc <phuocloc@gmail.com>
 
   Circuit:
   - Arduino Uno/Mini/Nano:  A5 (SCL),   A4 (SDA)

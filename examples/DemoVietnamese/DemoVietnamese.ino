@@ -1,7 +1,7 @@
 /*
   DemoVietnamese: print to a LCD2004A (Japanese ROM) using I2C (PCF8574)
   a Vietnamese text and clear the screen before printing another text.
-  Author: Le Phuoc Loc
+  Author: Le Phuoc Loc <phuocloc@gmail.com>
 
   Circuit:
   - Arduino Uno/Mini/Nano:  A5 (SCL),   A4 (SDA)

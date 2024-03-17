@@ -1,7 +1,7 @@
 /*
   LongStringEnglish: print a long English text to a LCD2004A (EU/Latin ROM) using I2C (PCF8574),
   also call some functions from parent class LiquidCrystal_I2C for demonstrating interoperability.
-  Author: Le Phuoc Loc
+  Author: Le Phuoc Loc <phuocloc@gmail.com>
 
   Circuit:
   - Arduino Uno/Mini/Nano:  A5 (SCL),   A4 (SDA)

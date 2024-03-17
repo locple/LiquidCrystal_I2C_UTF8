@@ -1,7 +1,7 @@
 /*
   StringsRussian: print multiple strings from a Russian song
   to a LCD1602A (Russian/Latin ROM) using I2C (PCF8574)
-  Author: Le Phuoc Loc
+  Author: Le Phuoc Loc <phuocloc@gmail.com>
 
   Circuit:
   - Arduino Uno/Mini/Nano:  A5 (SCL),   A4 (SDA)
