@@ -28,7 +28,7 @@ An Arduino library extended from LiquidCrystal_I2C to print Vietnamese/Russian (
 Otherwise, use I2C scanning program to detect I2C address:
 https://learn.adafruit.com/scanning-i2c-addresses/arduino
 
-## Programming
+## Programming Steps *(see more details in examples folder)*
 ### Printing English
 - Include **`LCDI2C_UTF8.h`** for the main base class and one customized character (°)
 > :point_right: Degree (°) symbol can be printed.
