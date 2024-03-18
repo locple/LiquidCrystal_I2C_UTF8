@@ -66,7 +66,7 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 ### Printing Russian
 - Include **`LCDI2C_UTF8.h`** for the main base class and one customized character (°)
 > :point_right: Degree(°) symbol can be printed.
-- Include **`ROM_Surenoo_RU.h`** for Russian letter mappings, only used on LCD with controller chips:
+- Include **`ROM_Surenoo_RU.h`** for Russian letter mappings, only used on LCDs:
 
   **Russian version of Surenoo SLC series**
 > :point_right: All Russian and English letters, arrow (**↵ ↑ → ↓ ←**), currency (**¢ £**), (**×**) symbols can be printed.
