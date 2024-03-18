@@ -41,7 +41,7 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 - `backlight()`: Turn on the LCD backlight
 - `print(text)`: print text (String or char[]) to LCD
 > If no longer room to print the next word in current line, it'll be printed in next line.
-- `print(text, nsec)`: print long text with pause **nsec** seconds
+- `print(text, nsec)`: print long text with **nsec** seconds paused
 > If the screen is full, wait **nsec** seconds for audience to read before printing the next part on next screen.
 
 ### Printing Vietnamese
@@ -56,7 +56,7 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 - `backlight()`: Turn on the LCD backlight
 - `print(text)`: print text (String or char[]) to LCD
 > If no longer room to print the next word in current line, it'll be printed in next line.
-- `print(text, nsec)`: print long text with pause **nsec** seconds
+- `print(text, nsec)`: print long text with **nsec** seconds paused
 > If the screen is full, wait **nsec** seconds for audience to read before printing the next part on next screen.
 
 > [!CAUTION]
@@ -75,7 +75,7 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 - `backlight()`: Turn on the LCD backlight
 - `print(text)`: print text (String or char[]) to LCD
 > If no longer room to print the next word in current line, it'll be printed in next line.
-- `print(text, nsec)`: print long text with pause **nsec** seconds
+- `print(text, nsec)`: print long text with **nsec** seconds paused
 > If the screen is full, wait **nsec** seconds for audience to read before printing the next part on next screen.
 
 > [!NOTE]
