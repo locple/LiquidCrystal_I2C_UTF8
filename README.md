@@ -4,7 +4,7 @@ An Arduino library extended from LiquidCrystal_I2C to print Vietnamese/Russian (
 ## Hardware Required
 - **LCD** (1602, 2004, ...) using controllers/drivers:
   Hitachi HD44780U, Wuxi AIP31066, Samsung KS0066, Jewel Hill SPLC780, Sitronix ST7066, Surenoo SLC series, ...
-- **I2C adapter**: PCF8574 family. *You can buy LCDs with I2C adapter soldered (LCD I2C).*
+- **I2C adapter**: PCF8574 family. *For convenience, you can buy LCDs with I2C adapter soldered instead doing it yourself.*
 - **MCU**: Arduino /Uno/Mini/Nano/Micro, ESP8266, ESP32, WeMos LOLIN D1 Mini, WeMos LOLIN D32, ...
 
 ## I2C Wiring
