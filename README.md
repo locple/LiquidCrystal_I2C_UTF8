@@ -40,9 +40,9 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 - `init()`: Initialize the LCD
 - `backlight()`: Turn on the LCD backlight
 - `print(text)`: print text (String or char[]) to LCD
-> If no longer room to print the next word in current line, it'll be printed in next line.
+> If no room in current line for the next word, it'll be printed in the next line.
 - `print(text, nsec)`: print long text with **nsec** seconds paused
-> If the screen is full, wait **nsec** seconds for audience to read before printing the next part on next screen.
+> If no room in the screen to print more, wait **nsec** seconds for audiences to read before clearing to print the next part.
 
 ### Printing Vietnamese
 - Include **`LCDI2C_Viet.h`** for the main class and customized characters for Vietnamese
@@ -55,9 +55,9 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 - `init()`: Initialize the LCD
 - `backlight()`: Turn on the LCD backlight
 - `print(text)`: print text (String or char[]) to LCD
-> If no longer room to print the next word in current line, it'll be printed in next line.
+> If no room in current line for the next word, it'll be printed in the next line.
 - `print(text, nsec)`: print long text with **nsec** seconds paused
-> If the screen is full, wait **nsec** seconds for audience to read before printing the next part on next screen.
+> If no room in the screen to print more, wait **nsec** seconds for audiences to read before clearing to print the next part.
 
 > [!CAUTION]
 > Due to CGRAM limit, maximum of 8 Vietnamese letters with diacritics can be printed on a screen, otherwise diacritics removed.
@@ -74,9 +74,9 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 - `init()`: Initialize the LCD
 - `backlight()`: Turn on the LCD backlight
 - `print(text)`: print text (String or char[]) to LCD
-> If no longer room to print the next word in current line, it'll be printed in next line.
+> If no room in current line for the next word, it'll be printed in the next line.
 - `print(text, nsec)`: print long text with **nsec** seconds paused
-> If the screen is full, wait **nsec** seconds for audience to read before printing the next part on next screen.
+> If no room in the screen to print more, wait **nsec** seconds for audiences to read before clearing to print the next part.
 
 > [!NOTE]
 > **Not yet supported**:
