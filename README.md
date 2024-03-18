@@ -39,7 +39,7 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 - Create LiquidCrystal_I2C_UTF8 object with I2C address, LCD columns, LCD rows
 - `init()`: Initialize the LCD
 - `backlight()`: Turn on the LCD backlight
-- `print(text)`: print text (String or char[]) to LCD
+- `print(text)`: print UTF-8 text (String or char[]) to LCD
 > If no room in current line for the next word, it'll be printed in the next line.
 - `print(text, nsec)`: print long text with **nsec** seconds paused
 > If no room in the screen to print more, wait **nsec** seconds for audiences to read before clearing to print the next part.
@@ -54,7 +54,7 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 - Create LiquidCrystal_I2C_UTF8 object with I2C address, LCD columns, LCD rows
 - `init()`: Initialize the LCD
 - `backlight()`: Turn on the LCD backlight
-- `print(text)`: print text (String or char[]) to LCD
+- `print(text)`: print UTF-8 text (String or char[]) to LCD
 > If no room in current line for the next word, it'll be printed in the next line.
 - `print(text, nsec)`: print long text with **nsec** seconds paused
 > If no room in the screen to print more, wait **nsec** seconds for audiences to read before clearing to print the next part.
@@ -73,7 +73,7 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 - Create LiquidCrystal_I2C_UTF8 object with I2C address, LCD columns, LCD rows
 - `init()`: Initialize the LCD
 - `backlight()`: Turn on the LCD backlight
-- `print(text)`: print text (String or char[]) to LCD
+- `print(text)`: print UTF-8 text (String or char[]) to LCD
 > If no room in current line for the next word, it'll be printed in the next line.
 - `print(text, nsec)`: print long text with **nsec** seconds paused
 > If no room in the screen to print more, wait **nsec** seconds for audiences to read before clearing to print the next part.
