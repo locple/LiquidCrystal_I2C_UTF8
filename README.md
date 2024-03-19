@@ -72,7 +72,7 @@ LiquidCrystal_I2C_UTF8 lcd(0x27, 20, 2);  // I2C address = 0x27; Display columns
 void setup() {
   lcd.init();                             // Initialize the LCD
   lcd.backlight();                        // Turn on the LCD backlight
-  lcd.print("Подмосковные вечера — одна из самых популярных советских песен, её исполняли \
+  lcd.print("Подмосковные вечера - одна из самых популярных советских песен, её исполняли \
 известные эстрадные и академические певцы, хоры и оркестры в СССР и за рубежом.", 3);
 }
 void loop() {}
