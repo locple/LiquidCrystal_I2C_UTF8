@@ -1,32 +1,60 @@
 # LiquidCrystal_I2C_UTF8
-An Arduino library extended from LiquidCrystal_I2C to print Vietnamese/Russian (UTF-8) on LCDs (16x2, 20x4...)
+An Arduino library extended from LiquidCrystal_I2C to print Vietnamese, Russian, or specific symbols (in UTF-8) to LCDs like LCD1602A, LCD2004A.
 
 ## Hardware Required
-- **LCD** (1602, 2004, ...) using controllers/drivers:
-  Hitachi HD44780U, Wuxi AIP31066, Samsung KS0066, Jewel Hill SPLC780, Sitronix ST7066, Surenoo SLC series, ...
+*Similar to LiquidCrystal_I2C*
+- **LCD** (1602, 2004, ...) using controllers:
+  Hitachi HD44780U, Wuxi AIP31066, Samsung KS0066, Jewel SPLC780, Sitronix ST7066, Surenoo SLC...
 - **I2C adapter**: PCF8574 family. *For convenience, you can buy LCDs with I2C adapter soldered instead doing it yourself.*
 - **MCU dev board**: Arduino /Uno/Mini/Nano/Micro, ESP8266, ESP32, WeMos LOLIN D1 Mini, WeMos LOLIN D32, ...
 
 ## I2C Wiring
-- Solder or connect 16-pin row to LCD's 16-pin row
-- Connect GND pin to MCU's GND pin
-- Connect VCC pin to MCU's VIN pin
-- Connect **SCL** pin to MCU's SCL pin (refer to MCU pinout diagram)
-- Connect **SDA** pin to MCU's SDA pin (refer to MCU pinout diagram)
+*Similar to LiquidCrystal_I2C*
+- For LCD 1601, 1602, 2004: Solder or connect I2C's 1x16 pins to LCD's 1x16 pins
+
+  For LCD 0802, 2002, 4002: Solder or connect I2C's 2x8 pins to LCD's 2x8 pins
+- Connect I2C's GND pin to MCU's GND pin
+- Connect I2C's VCC pin to MCU's VIN pin
+- Connect I2C's **SCL** pin to MCU's SCL pin (*see table below for pin location*)
+- Connect I2C's **SDA** pin to MCU's SDA pin (*see table below for pin location*)
+
+|    Pin  | Arduino Uno/Mini/Nano | Arduino Micro | LOLIN D1 Mini | ESP8266 | LOLIN D32 | ESP32 |
+|:-------:|:---------------------:|:-------------:|:-------------:|:-------:|:-----:|:-----:|
+| **SCL** |           A5          |       3       |        5      |   D1    |  22   |  D22  |
+| **SDA** |           A4          |       2       |        4      |   D2    |  21   |  D21  |
 
 ## Determine Display Size
-- LCD**0801** = 08 columns x 01 rows
-- LCD**1602** = 16 columns x 02 rows
-- LCD**2002** = 20 columns x 02 rows
-- LCD**2004** = 20 columns x 04 rows
-- LCD**4004** = 40 columns x 04 rows
+|  LCD  | 0801 | 0802 | 1601 | 1602 | 1604 | 2002 | 2004 | 2402 | 4002 | 4004 |
+|:-----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+|Columns|   8  |   8  |  16  |  16  |  16  |  20  |  20  |  24  |  40  |  40  |
+|  Rows |   1  |   2  |   1  |   2  |   4  |   2  |   4  |   2  |   2  |   4  |
 
 ## Determine I2C Address
-- No shortcut on A0, A1, A2 of TI's PCF8574    => I2C Address = **0x27**
-- No shortcut on A0, A1, A2 of NXP's PCF8574   => I2C Address = **0x3F**
+For I2C PCF8574 using **TI** (Texas Instruments) chip: *(most likely **0x27**)*
+
+![I2C TI PCF8574](https://lastminuteengineers.com/wp-content/uploads/arduino/I2C-LCD-Address-Selection-Jumper-Table-for-TI.png)
+
+For I2C PCF8574 using **NXP** chip: *(most likely **0x3F**)*
+
+![I2C NXP PCF8574](https://lastminuteengineers.com/wp-content/uploads/arduino/I2C-LCD-Address-Selection-Jumper-Table-for-NXP.png)
 
 Otherwise, use I2C scanning program to detect I2C address:
 https://learn.adafruit.com/scanning-i2c-addresses/arduino
+
+## Demo: print Vietnamese UTF-8 string
+```C++
+#include <LCDI2C_Viet.h>
+#include <ROM_Standard_JP.h>
+
+LiquidCrystal_I2C_Viet lcd(0x27, 20, 4);  // I2C address: 0x27; Display size: 20x4
+
+void setup() {
+  lcd.init();
+  lcd.backlight();
+  lcd.print("Cao đẳng Công thương Việt Nam");
+}
+void loop() {}
+```
 
 ## Programming Steps *(see more details in examples folder)*
 ### Printing English
