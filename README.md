@@ -49,8 +49,8 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 
 ## Write Demo: print a Vietnamese string
 ```C++
-#include <LCDI2C_Viet.h>                  // Main class and Vietnamese customized character definition
-#include <ROM_Standard_JP.h>              // Character mapping for the most popular LCD (Japanese ROM)
+#include <LCDI2C_Viet.h>                  // Main class and Vietnamese customized characters
+#include <ROM_Standard_JP.h>              // Character mapping for most popular LCDs (Japanese ROM)
 
 LiquidCrystal_I2C_Viet lcd(0x27, 16, 2);  // I2C address = 0x27; Display columns = 16, rows = 2
 
@@ -65,7 +65,7 @@ void loop() {}
 ## Write Demo: print a long Russian string
 ```C++
 #include <LCDI2C_UTF8.h>                  // Main class
-#include <ROM_Surenoo_RU.h>               // Character mapping for Surenoo LCD (Russian ROM)
+#include <ROM_Surenoo_RU.h>               // Character mapping for Surenoo LCDs (Russian ROM)
 
 LiquidCrystal_I2C_UTF8 lcd(0x27, 20, 2);  // I2C address = 0x27; Display columns = 20, rows = 2
 
