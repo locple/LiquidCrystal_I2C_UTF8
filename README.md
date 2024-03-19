@@ -3,16 +3,22 @@ An Arduino library extended from LiquidCrystal_I2C to print Vietnamese, Russian,
 
 ## Hardware Required
 *Similar to LiquidCrystal_I2C*
-- **LCD** (1602, 2004, ...) using controllers:
-  Hitachi HD44780U, Wuxi AIP31066, Samsung KS0066, Jewel SPLC780, Sitronix ST7066, Surenoo SLC...
-- **I2C adapter**: PCF8574 family. *For convenience, you can buy LCDs with I2C adapter soldered instead doing it yourself.*
 - **MCU dev board**: Arduino /Uno/Mini/Nano/Micro, ESP8266, ESP32, WeMos LOLIN D1 Mini, WeMos LOLIN D32, ...
+- **LCD** (1602, 2004, ...) using controller:
+  Hitachi HD44780U, Wuxi AIP31066, Samsung KS0066, Jewel SPLC780D, Sitronix ST7066
+
+  *For convenience, you can buy LCD with an I2C adapter soldered instead doing it yourself.*
+- **I2C adapter** using PCF8574 chip having 1x16-pin or 2x8-pin interface to LCD.
+
+  *Refer to table below (for Surenoo LCD series) to find the right I2C adapter:*
+
+|   LCD  | 0801 | 0802 | 1601 | 1602 | 1604 | 2002 | 2004 | 2402 | 4002 | 4004 |
+|:------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+|Pin type|2x7 +2|  2x8 | 1x16 | 1x16 | 1x16 | 2x8  | 1x16 |  2x8 |  2x8 |  2x8 |
 
 ## I2C Wiring
 *Similar to LiquidCrystal_I2C*
-- For LCD 1601, 1602, 2004: Solder or connect I2C's 1x16 pins to LCD's 1x16 pins
-
-  For LCD 0802, 2002, 4002: Solder or connect I2C's 2x8 pins to LCD's 2x8 pins
+- Solder or connect I2C's 1x16 (or 2x8) pins to LCD's 1x16 (or 2x8) pins
 - Connect I2C's GND pin to MCU's GND pin
 - Connect I2C's VCC pin to MCU's VIN pin
 - Connect I2C's **SCL** pin to MCU's SCL pin (*see table below for pin location*)
@@ -23,13 +29,13 @@ An Arduino library extended from LiquidCrystal_I2C to print Vietnamese, Russian,
 | **SCL** |           A5          |       3       |        5      |   D1    |  22   |  D22  |
 | **SDA** |           A4          |       2       |        4      |   D2    |  21   |  D21  |
 
-## Determine Display Size
+## Find Display Size
 |  LCD  | 0801 | 0802 | 1601 | 1602 | 1604 | 2002 | 2004 | 2402 | 4002 | 4004 |
 |:-----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-|Columns|   8  |   8  |  16  |  16  |  16  |  20  |  20  |  24  |  40  |  40  |
-|  Rows |   1  |   2  |   1  |   2  |   4  |   2  |   4  |   2  |   2  |   4  |
+|columns|   8  |   8  |  16  |  16  |  16  |  20  |  20  |  24  |  40  |  40  |
+|  rows |   1  |   2  |   1  |   2  |   4  |   2  |   4  |   2  |   2  |   4  |
 
-## Determine I2C Address
+## Find I2C Address
 For I2C PCF8574 using **TI** (Texas Instruments) chip: *(most likely **0x27**)*
 
 ![I2C TI PCF8574](https://lastminuteengineers.com/wp-content/uploads/arduino/I2C-LCD-Address-Selection-Jumper-Table-for-TI.png)
@@ -41,22 +47,39 @@ For I2C PCF8574 using **NXP** chip: *(most likely **0x3F**)*
 Otherwise, use I2C scanning program to detect I2C address:
 https://learn.adafruit.com/scanning-i2c-addresses/arduino
 
-## Demo: print Vietnamese UTF-8 string
+## Write Demo: print a Vietnamese string
 ```C++
-#include <LCDI2C_Viet.h>
-#include <ROM_Standard_JP.h>
+#include <LCDI2C_Viet.h>                  // Main class and Vietnamese customized character definition
+#include <ROM_Standard_JP.h>              // Character mapping for the most popular LCD (Japanese ROM)
 
-LiquidCrystal_I2C_Viet lcd(0x27, 20, 4);  // I2C address: 0x27; Display size: 20x4
+LiquidCrystal_I2C_Viet lcd(0x27, 16, 2);  // I2C address = 0x27; Display columns = 16, rows = 2
 
 void setup() {
-  lcd.init();
-  lcd.backlight();
+  lcd.init();                             // Initialize the LCD
+  lcd.backlight();                        // Turn on the LCD backlight
   lcd.print("Cao đẳng Công thương Việt Nam");
 }
 void loop() {}
 ```
 
-## Programming Steps *(see more details in examples folder)*
+## Write Demo: print a long Russian string
+```C++
+#include <LCDI2C_UTF8.h>                  // Main class
+#include <ROM_Surenoo_RU.h>               // Character mapping for Surenoo LCD (Russian ROM)
+
+LiquidCrystal_I2C_UTF8 lcd(0x27, 20, 2);  // I2C address = 0x27; Display columns = 20, rows = 2
+
+void setup() {
+  lcd.init();                             // Initialize the LCD
+  lcd.backlight();                        // Turn on the LCD backlight
+  lcd.print("Подмосковные вечера — одна из самых популярных советских песен, её исполняли \
+известные эстрадные и академические певцы, хоры и оркестры в СССР и за рубежом.", 3);
+}
+void loop() {}
+```
+*See more demos in examples folder*
+
+## What header files to include
 ### Printing English
 - Include **`LCDI2C_UTF8.h`** for the main base class and one customized character (°)
 > :point_right: Degree (°) symbol can be printed.
@@ -64,13 +87,6 @@ void loop() {}
 
   **HD44780UA00, AIP31066, KS0066F00, KS0066F04, SPLC780D, ST7066-0A**
 > :point_right: All English letters, sign (**÷ √ ∞ → ←**), Greek (**Σ Ω α β δ ε θ μ π ρ**), currency (**¥**) symbols can be printed.
-- Create LiquidCrystal_I2C_UTF8 object with I2C address, LCD columns, LCD rows
-- `init()`: Initialize the LCD
-- `backlight()`: Turn on the LCD backlight
-- `print(text)`: print UTF-8 text (String or char[]) to LCD
-> If no room in current line for the next word, it'll be printed in the next line.
-- `print(text, nsec)`: print long text with **nsec** seconds paused
-> If no room in the screen to print more, wait **nsec** seconds for audiences to read before clearing to print the next part.
 
 ### Printing Vietnamese
 - Include **`LCDI2C_Viet.h`** for the main class and customized characters for Vietnamese
@@ -79,13 +95,6 @@ void loop() {}
 
   **HD44780UA00, AIP31066, KS0066F00, KS0066F04, SPLC780D, ST7066-0A**
 > :point_right: All English letters, sign (**÷ √ ∞ → ←**), Greek (**Σ Ω α β δ ε θ μ π ρ**), currency (**¥**) symbols can be printed.
-- Create LiquidCrystal_I2C_UTF8 object with I2C address, LCD columns, LCD rows
-- `init()`: Initialize the LCD
-- `backlight()`: Turn on the LCD backlight
-- `print(text)`: print UTF-8 text (String or char[]) to LCD
-> If no room in current line for the next word, it'll be printed in the next line.
-- `print(text, nsec)`: print long text with **nsec** seconds paused
-> If no room in the screen to print more, wait **nsec** seconds for audiences to read before clearing to print the next part.
 
 > [!CAUTION]
 > Due to CGRAM limit, maximum of 8 Vietnamese letters with diacritics can be printed on a screen, otherwise diacritics removed.
@@ -98,9 +107,8 @@ void loop() {}
 
   **Russian version of Surenoo SLC series**
 > :point_right: All Russian and English letters, arrow (**↵ ↑ → ↓ ←**), currency (**¢ £**), (**×**) symbols can be printed.
-- Create LiquidCrystal_I2C_UTF8 object with I2C address, LCD columns, LCD rows
-- `init()`: Initialize the LCD
-- `backlight()`: Turn on the LCD backlight
+
+## Function print()
 - `print(text)`: print UTF-8 text (String or char[]) to LCD
 > If no room in current line for the next word, it'll be printed in the next line.
 - `print(text, nsec)`: print long text with **nsec** seconds paused
