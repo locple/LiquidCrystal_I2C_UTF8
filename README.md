@@ -36,6 +36,8 @@ An Arduino library extended from LiquidCrystal_I2C to print Vietnamese, Russian,
 |  rows |   1  |   2  |   1  |   2  |   4  |   2  |   4  |   2  |   2  |   4  |
 
 ## Find I2C Address
+See pin A0, A1, A2 on I2C adapter:
+
 For I2C PCF8574 using **TI** (Texas Instruments) chip: *(most likely **0x27**)*
 
 ![I2C TI PCF8574](https://lastminuteengineers.com/wp-content/uploads/arduino/I2C-LCD-Address-Selection-Jumper-Table-for-TI.png)
@@ -50,14 +52,14 @@ https://learn.adafruit.com/scanning-i2c-addresses/arduino
 ## Write Demo: print a Vietnamese string
 ```C++
 #include <LCDI2C_Viet.h>                  // Main class and Vietnamese customized characters
-#include <ROM_Standard_JP.h>              // Character mapping for most popular LCDs (Japanese ROM)
+#include <ROM_Standard_JP.h>              // Character mapping for popular LCDs (Japanese ROM)
 
 LiquidCrystal_I2C_Viet lcd(0x27, 16, 2);  // I2C address = 0x27; Display columns = 16, rows = 2
 
 void setup() {
   lcd.init();                             // Initialize the LCD
   lcd.backlight();                        // Turn on the LCD backlight
-  lcd.print("Cao đẳng Công thương Việt Nam");
+  lcd.println("Cao đẳng Công thương Việt Nam");
 }
 void loop() {}
 ```
@@ -77,6 +79,28 @@ void setup() {
 }
 void loop() {}
 ```
+
+## Write Demo: print temperature and humidity sample
+```C++
+#include <LCDI2C_Viet.h>                  // Main class and Vietnamese customized characters
+#include <ROM_Standard_JP.h>              // Character mapping for popular LCDs (Japanese ROM)
+
+LiquidCrystal_I2C_Viet lcd(0x27, 16, 2);  // I2C address = 0x27; Display columns = 16, rows = 2
+
+void setup() {
+  lcd.init();                             // Initialize the LCD
+  lcd.backlight();                        // Turn on the LCD backlight
+
+  float temp = 25.78;
+  float humi = 9.431;
+  char buff[7];
+  sprintf(buff, "%.1f", temp);
+  lcd.print("Nhiệt độ: "); lcd.print(buff); lcd.println("°C");
+  lcd.println("Độ ẩm β:   " + String(humi, 2) + '%');
+}
+void loop() {}
+```
+
 *See more demos in examples folder*
 
 ## What header files to include
