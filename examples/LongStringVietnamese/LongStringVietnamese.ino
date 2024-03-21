@@ -3,26 +3,16 @@
   a popular LCD1602A (Japanese ROM) using I2C (PCF8574)
   Author: Le Phuoc Loc <phuocloc@gmail.com>
 
-  Circuit:
-  - LOLIN D1 Mini:          5 (SCL),    4 (SDA)
-  - ESP8266:                D1 (SCL),   D2 (SDA)
-  - LOLIN D32:              22 (SCL),   21 (SDA)
-  - ESP32:                  D22 (SCL),  D21 (SDA)
-  Not applicable for Arduino series due to memory limit
-
-  Coding: steps to follow
+  Note:
+  - Not applicable for Arduino series due to memory limit
   - Include LCDI2C_Viet.h for the main class and customized characters for Vietnamese
     => All Vietnamese letters and degree (°) symbol can be printed.
   - Include ROM_Standard_JP.h for Greek symbol mappings on LCD2004A Japanese ROM
     => All English letters, sign(÷√∞→←), Greek(ΣΩαβδεθμπρ), currency(¥) symbols can be printed.
-  - Create LiquidCrystal_I2C_UTF8 object with I2C address=0x27, LCD size: 16 columns, 2 rows
-  - ::init(): Initialize the LCD
-  - ::backlight(): Turn on the LCD backlight
-  - ::print(text): print text (String or char[]) to LCD
-    If no longer room to print the next word in current line, it'll be printed in next line.
-    ::print(text, nsec): print long text with pause 'nsec' seconds
+  - Max 8 Vietnamese letters with diacritics printed on a screen, otherwise diacritics removed.
+  - If no longer room to print the next word in current line, it'll be printed in next line.
+  - print(text, nsec): print long text with pause 'nsec' seconds
     If the screen is full, wait 'nsec' seconds for audience to read before printing the next part on next screen.
-    Note: max 8 Vietnamese letters with diacritics printed on a screen, otherwise diacritics removed.
 
   https://github.com/locple/LiquidCrystal_I2C_UTF8
 */
