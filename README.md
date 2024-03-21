@@ -80,7 +80,7 @@ void setup() {
 void loop() {}
 ```
 
-## Write Demo: print temperature and humidity sample
+## Write Demo: print temperature and humidity values
 ```C++
 #include <LCDI2C_Viet.h>                  // Main class and Vietnamese customized characters
 #include <ROM_Standard_JP.h>              // Character mapping for popular LCDs (Japanese ROM)
@@ -101,36 +101,29 @@ void setup() {
 void loop() {}
 ```
 
-*See more demos in examples folder*
+*See more demos in examples folder.*
 
 ## What header files to include
-### Printing English
-- Include **`LCDI2C_UTF8.h`** for the main base class and one customized character (°)
-> :point_right: Degree (°) symbol can be printed.
-- Include **`ROM_Standard_JP.h`** for Greek symbol mappings, only used on LCD with controller chips:
+2 header files required to be included in the program.
+### First header file:
+*Include one of the following files depending on character set needed*
+| Character set |  LCDI2C_UTF8.h   |       LCDI22C_Viet.h      |
+|:-------------:|:----------------:|:-------------------------:|
+|  **Symbols**  |    Degree (°)    |         Degree (°)        |
+|  **English**  |:heavy_check_mark:|     :heavy_check_mark:    |
+| **Vietnamese**|        :x:       |:heavy_check_mark::warning:|
+> :warning: Due to CGRAM limit, maximum of 8 different Vietnamese letters with diacritics can be printed on a screen, otherwise diacritics removed.
+> But it's usually adequate to print full of Vietnamese text on LCD0801, LCD0802, LCD1602.
 
-  **HD44780UA00, AIP31066, KS0066F00, KS0066F04, SPLC780D, ST7066-0A**
-> :point_right: All English letters, sign (**÷ √ ∞ → ←**), Greek (**Σ Ω α β δ ε θ μ π ρ**), currency (**¥**) symbols can be printed.
-
-### Printing Vietnamese
-- Include **`LCDI2C_Viet.h`** for the main class and customized characters for Vietnamese
-> :point_right: All Vietnamese letters and degree (°) symbol can be printed.
-- Include **`ROM_Standard_JP.h`** for Greek symbol mappings, only used on LCD with controller chips:
-
-  **HD44780UA00, AIP31066, KS0066F00, KS0066F04, SPLC780D, ST7066-0A**
-> :point_right: All English letters, sign (**÷ √ ∞ → ←**), Greek (**Σ Ω α β δ ε θ μ π ρ**), currency (**¥**) symbols can be printed.
-
-> [!CAUTION]
-> Due to CGRAM limit, maximum of 8 Vietnamese letters with diacritics can be printed on a screen, otherwise diacritics removed.
-> It's usually enough to print full Vietnamese text on LCD0801, LCD0802, LCD1602.
-
-### Printing Russian
-- Include **`LCDI2C_UTF8.h`** for the main base class and one customized character (°)
-> :point_right: Degree(°) symbol can be printed.
-- Include **`ROM_Surenoo_RU.h`** for Russian letter mappings, only used on LCDs:
-
-  **Russian version of Surenoo SLC series**
-> :point_right: All Russian and English letters, arrow (**↵ ↑ → ↓ ←**), currency (**¢ £**), (**×**) symbols can be printed.
+### Second header file:
+*Include one of the following files depending on LCD's ROM type*
+|                  | ROM_Standard_JP.h | ROM_Standard_EU.h |  ROM_Standard_RU.h | ROM_Surenoo_RU.h |
+|:----------------:|:-----------------:|:-----------------:|:------------------:|:----------------:|
+|**LCD controllers/drivers**|**HD44780UA00, AIP31066, KS0066F00, KS0066F04, SPLC780D, ST7066-0A**|**AIP31066W2, ST7066-0B**|**HD44780UA02**|**Surenoo SLC series (Russian)**|
+|    **Russian**   |        :x:        |        :x:        |**Capital letters only**|:heavy_check_mark:|
+|  Special symbols | ÷ √ ∞ → ← | ± ≈ ² ³ × ÷ ≤ ≥ √ ∞ ↵ ↑ ↓ → ← | ↵ ↑ ↓ → ← ≤ ≥ ± ² ³ × ÷ ∞ | ↵ ↑ → ↓ ← × |
+|   Greek symbols  |Σ Ω α β δ ε θ μ π ρ|Σ Ω α β γ δ ε η θ μ π ρ σ ψ ω|Σ Ω α β δ ε θ μ π σ ω|       |
+| Currency symbols |          ¥        |       ¢ £ ¥       |        ¢ £ ¥       |        ¢ £       |
 
 ## Function print()
 - `print(text)`: print UTF-8 text (String or char[]) to LCD
