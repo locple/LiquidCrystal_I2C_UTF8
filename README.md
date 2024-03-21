@@ -106,6 +106,8 @@ void loop() {}
 ## What header files to include
 2 header files required to be included in the program.
 ### First header file:
+This for main class and customized character set definitions.
+
 *Include one of the following files depending on character set needed*
 | Character set |  LCDI2C_UTF8.h   |       LCDI22C_Viet.h      |
 |:-------------:|:----------------:|:-------------------------:|
@@ -116,6 +118,8 @@ void loop() {}
 > But it's usually adequate to print full of Vietnamese text on LCD0801, LCD0802, LCD1602.
 
 ### Second header file:
+This for UTF-8 character mapping to LCD ROM's built-in character set.
+
 *Include one of the following files depending on LCD's ROM type*
 |                  | ROM_Standard_JP.h | ROM_Standard_EU.h |  ROM_Standard_RU.h | ROM_Surenoo_RU.h |
 |:----------------:|:-----------------:|:-----------------:|:------------------:|:----------------:|
