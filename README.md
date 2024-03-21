@@ -131,7 +131,6 @@ void loop() {}
 - `print(text, nsec)`: print long text with **nsec** seconds paused
 > If no room in the screen to print more, wait **nsec** seconds for audiences to read before clearing to print the next part.
 
-> [!NOTE]
-> **Not yet supported**:
-> - Autoscroll
-> - Printing Japanese Kana on LCDs with Japanese standard ROM!!
+## Not yet support
+- Autoscroll
+- Printing Japanese Kana on LCDs with Japanese standard ROM!!
