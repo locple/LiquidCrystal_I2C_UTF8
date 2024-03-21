@@ -119,7 +119,7 @@ void loop() {}
 *Include one of the following files depending on LCD's ROM type*
 |                  | ROM_Standard_JP.h | ROM_Standard_EU.h |  ROM_Standard_RU.h | ROM_Surenoo_RU.h |
 |:----------------:|:-----------------:|:-----------------:|:------------------:|:----------------:|
-|**LCD controllers/drivers**|**HD44780UA00, AIP31066, KS0066F00, KS0066F04, SPLC780D, ST7066-0A**|**AIP31066W2, ST7066-0B**|**HD44780UA02**|**Surenoo SLC series (Russian)**|
+| **For LCD chips**|**HD44780UA00, AIP31066, KS0066F00, KS0066F04, SPLC780D, ST7066-0A**|**AIP31066W2, ST7066-0B**|**HD44780UA02**|**Surenoo SLC series (Russian)**|
 |    **Russian**   |        :x:        |        :x:        |**Capital letters only**|:heavy_check_mark:|
 |  Special symbols | ÷ √ ∞ → ← | ± ≈ ² ³ × ÷ ≤ ≥ √ ∞ ↵ ↑ ↓ → ← | ↵ ↑ ↓ → ← ≤ ≥ ± ² ³ × ÷ ∞ | ↵ ↑ → ↓ ← × |
 |   Greek symbols  |Σ Ω α β δ ε θ μ π ρ|Σ Ω α β γ δ ε η θ μ π ρ σ ψ ω|Σ Ω α β δ ε θ μ π σ ω|       |
