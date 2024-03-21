@@ -3,25 +3,13 @@
   also call some functions from parent class LiquidCrystal_I2C for demonstrating interoperability.
   Author: Le Phuoc Loc <phuocloc@gmail.com>
 
-  Circuit:
-  - Arduino Uno/Mini/Nano:  A5 (SCL),   A4 (SDA)
-  - Arduino Micro:          3 (SCL),    2 (SDA)
-  - LOLIN D1 Mini:          5 (SCL),    4 (SDA)
-  - ESP8266:                D1 (SCL),   D2 (SDA)
-  - LOLIN D32:              22 (SCL),   21 (SDA)
-  - ESP32:                  D22 (SCL),  D21 (SDA)
-
-  Coding: steps to follow
+  Note:
   - Include LCDI2C_UTF8.h for the main base class and one customized character (°)
     => Degree(°) symbol can be printed.
   - Include ROM_Standard_EU.h for Greek symbol mappings on LCD2004A EU/Latin ROM
     => All English letters, sign(±≈²³×÷≤≥√∞↵↑→↓←), Greek(ΣΩαβγδεηθμπρσψω), currency(¢£¥) symbols can be printed.
-  - Create LiquidCrystal_I2C_UTF8 object with I2C address=0x27, LCD size: 20 columns, 4 rows
-  - ::init(): Initialize the LCD
-  - ::backlight(): Turn on the LCD backlight
-  - ::print(text): print text (String or char[]) to LCD
-    If no longer room to print the next word in current line, it'll be printed in next line.
-    ::print(text, nsec): print long text with pause 'nsec' seconds
+  - If no longer room to print the next word in current line, it'll be printed in next line.
+  - print(text, nsec): print long text with pause 'nsec' seconds
     If the screen is full, wait 'nsec' seconds for audience to read before printing the next part on next screen.
 
   https://github.com/locple/LiquidCrystal_I2C_UTF8
