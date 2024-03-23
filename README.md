@@ -139,4 +139,4 @@ For mapping specific UTF-8 character set to LCD ROM's built-in character set.
 - Autoscroll
 - Printing Japanese Kana on LCDs with Japanese standard ROM(!)
 - Printing European languages on LCDs with European standard ROM(!)
-- createChar: we're using CGRAM for the customized characters. It'll be reserved for user-defined characters in the future.
+- createChar: CGRAM is being used for our customized characters. It'll be reserved for user-defined characters in the future.
