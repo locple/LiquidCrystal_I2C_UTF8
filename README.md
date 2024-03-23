@@ -114,7 +114,7 @@ For main class, customized character set and UTF-8 character mapping to that set
 |  **Symbols**  |    Degree (°)    |         Degree (°)        |
 |  **English**  |:heavy_check_mark:|     :heavy_check_mark:    |
 | **Vietnamese**|        :x:       |:heavy_check_mark::warning:|
-> :warning: Due to CGRAM limit, maximum of 8 different Vietnamese letters with diacritics can be printed on a screen, otherwise diacritics is removed from excessive letters.
+> :warning: Due to CGRAM limit, maximum of 8 different Vietnamese letters with diacritics can be printed on a screen, otherwise diacritics will be removed from excessive letters.
 > But it's usually adequate to print full of Vietnamese text on LCD0801, LCD0802, LCD1601, LCD1602.
 
 ### Second header file
