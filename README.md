@@ -106,7 +106,7 @@ void loop() {}
 ## What header files to include
 2 header files required to be included in the program.
 ### First header file
-For main class, customized character set and UTF-8 character mapping to it.
+For main class, customized character set and UTF-8 character mapping to that set.
 
 *Include one of the following files depending on character set needed*
 | Character set |  LCDI2C_UTF8.h   |       LCDI22C_Viet.h      |
@@ -114,8 +114,8 @@ For main class, customized character set and UTF-8 character mapping to it.
 |  **Symbols**  |    Degree (°)    |         Degree (°)        |
 |  **English**  |:heavy_check_mark:|     :heavy_check_mark:    |
 | **Vietnamese**|        :x:       |:heavy_check_mark::warning:|
-> :warning: Due to CGRAM limit, maximum of 8 different Vietnamese letters with diacritics can be printed on a screen, otherwise diacritics removed.
-> But it's usually adequate to print full of Vietnamese text on LCD0801, LCD0802, LCD1602.
+> :warning: Due to CGRAM limit, maximum of 8 different Vietnamese letters with diacritics can be printed on a screen, otherwise diacritics is removed from excessive letters.
+> But it's usually adequate to print full of Vietnamese text on LCD0801, LCD0802, LCD1601, LCD1602.
 
 ### Second header file
 For mapping UTF-8 character set to LCD ROM's built-in character set.
