@@ -137,4 +137,5 @@ For mapping specific UTF-8 character set to LCD ROM's built-in character set.
 
 ## Not yet support
 - Autoscroll
-- Printing Japanese Kana on LCDs with Japanese standard ROM!!
+- Printing Japanese Kana on LCDs with Japanese standard ROM(!)
+- Printing European languages on LCDs with European standard ROM(!)
