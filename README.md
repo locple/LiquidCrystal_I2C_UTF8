@@ -112,7 +112,6 @@ For main class, customized character set and UTF-8 character mapping to that set
 | Character set |  LCDI2C_UTF8.h   |       LCDI22C_Viet.h      |
 |:-------------:|:----------------:|:-------------------------:|
 |  **Symbols**  |    Degree (°)    |         Degree (°)        |
-|  **English**  |:heavy_check_mark:|     :heavy_check_mark:    |
 | **Vietnamese**|        :x:       |:heavy_check_mark::warning:|
 > :warning: Due to CGRAM limit, maximum of 8 different Vietnamese letters with diacritics can be printed on a screen, otherwise diacritics will be removed from excessive letters.
 > But it's usually adequate to print full of Vietnamese text on LCD0801, LCD0802, LCD1601, LCD1602.
@@ -124,6 +123,7 @@ For mapping specific UTF-8 character set to LCD ROM's built-in character set.
 |                  | ROM_Standard_JP.h | ROM_Standard_EU.h |  ROM_Standard_RU.h | ROM_Surenoo_RU.h |
 |:----------------:|:-----------------:|:-----------------:|:------------------:|:----------------:|
 | **For LCD chips**|**HD44780UA00, AIP31066, KS0066F00, KS0066F04, SPLC780D, ST7066-0A**|**AIP31066W2, ST7066-0B**|**HD44780UA02**|**Surenoo SLC series (Russian)**|
+|    **English**   | :heavy_check_mark:| :heavy_check_mark:| :heavy_check_mark: |:heavy_check_mark:|
 |    **Russian**   |        :x:        |        :x:        |**Capital letters only**|:heavy_check_mark:|
 |  Special symbols | ÷ √ ∞ → ← | ± ≈ ² ³ × ÷ ≤ ≥ √ ∞ ↵ ↑ ↓ → ← | ↵ ↑ ↓ → ← ≤ ≥ ± ² ³ × ÷ ∞ | ↵ ↑ → ↓ ← × |
 |   Greek symbols  |Σ Ω α β δ ε θ μ π ρ|Σ Ω α β γ δ ε η θ μ π ρ σ ψ ω|Σ Ω α β δ ε θ μ π σ ω|       |
