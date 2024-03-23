@@ -118,7 +118,7 @@ For main class, customized character set and UTF-8 character mapping to that set
 > But it's usually adequate to print full of Vietnamese text on LCD0801, LCD0802, LCD1601, LCD1602.
 
 ### Second header file
-For mapping UTF-8 character set to LCD ROM's built-in character set.
+For mapping specific UTF-8 character set to LCD ROM's built-in character set.
 
 *Include one of the following files depending on LCD's ROM type*
 |                  | ROM_Standard_JP.h | ROM_Standard_EU.h |  ROM_Standard_RU.h | ROM_Surenoo_RU.h |
