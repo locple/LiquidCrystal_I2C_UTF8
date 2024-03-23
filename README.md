@@ -109,10 +109,10 @@ void loop() {}
 For main class, customized character set and UTF-8 character mapping to that set.
 
 *Include one of the following files depending on character set needed*
-| Character set |  LCDI2C_UTF8.h   |       LCDI22C_Viet.h      |
-|:-------------:|:----------------:|:-------------------------:|
-|  **Symbols**  |    Degree (°)    |         Degree (°)        |
-| **Vietnamese**|        :x:       |:heavy_check_mark::warning:|
+|     Character set    |  LCDI2C_UTF8.h   |       LCDI22C_Viet.h      |
+|:--------------------:|:----------------:|:-------------------------:|
+|**Customized symbols**|    degree (°)    |         degree (°)        |
+|    **Vietnamese**    |        :x:       |:heavy_check_mark::warning:|
 > :warning: Due to CGRAM limit, maximum of 8 different Vietnamese letters with diacritics can be printed on a screen, otherwise diacritics will be removed from excessive letters.
 > But it's usually adequate to print full of Vietnamese text on LCD0801, LCD0802, LCD1601, LCD1602.
 
