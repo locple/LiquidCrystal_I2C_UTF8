@@ -1,5 +1,7 @@
-# LiquidCrystal_I2C_UTF8
+# LiquidCrystal_I2C_UTF8 (replaced by LCDI2C_Multilingual)
 An Arduino library extended from LiquidCrystal_I2C to print Vietnamese, Russian, or specific symbols (in UTF-8) to LCDs like LCD1602A, LCD2004A.
+
+**This library was replaced by LCDI2C_Multilingual (https://github.com/locple/LCDI2C_Multilingual).**
 
 ## Hardware Required
 *Similar to LiquidCrystal_I2C*
